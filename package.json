@@ -1,0 +1,40 @@
+{
+  "name": "cordova-plugin-livereload",
+  "id": "cordova-plugin-livereload",
+  "version": "1.0.0",
+  "description": "Cordova Plugin to facilitate livereload workflow",
+  "main": "lib/index.js",
+  "author": "Omar Mefire <omefire@gmail.com>",
+  "license": "Apache 2.0",
+  "cordova": {
+    "id": "cordova-plugin-livereload",
+    "platforms": [
+      "android",
+      "ios",
+      "windows"
+    ]
+  },
+  "keywords": [
+    "cordova",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios",
+    "cordova-windows"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/omefire/cordova-plugin-livereload.git"
+  },
+  "dependencies": {
+    "ua-parser-js": "0.7.7", 
+    "proxy-middleware": "0.13.1", 
+    "browser-sync": "2.7.13",
+    "q": "1.0.1",
+    "elementtree": "0.1.6",
+    "underscore": "1.7.0",
+    "semver": "^4.3.x",
+    "shelljs": "0.3.0",
+    "npm": "^2.10.x",
+    "properties-parser": "0.2.3"
+  }
+}

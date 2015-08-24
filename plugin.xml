@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:rim="http://www.blackberry.com/ns/widgets"
+    id="cordova-plugin-livereload"
+    version="1.0.0-dev">
+    <name>cordova-plugin-livereload</name>
+    <description>Cordova Plugin to integrate LiveReload in the workflow</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,browsersync, browser-sync</keywords>
+    <repo>...</repo>
+
+    <hook type="after_plugin_add" src="lib/dependenciesInstall.js" />
+    <hook type="before_run" src="lib/runHook.js" />
+
+</plugin>
