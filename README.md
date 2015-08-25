@@ -9,7 +9,7 @@ What it does :
 
 ## How to install it
 
-* cordova plugin add https://github.com/omefire/cordova-plugin-livereload.git
+    cordova plugin add https://github.com/omefire/cordova-plugin-livereload.git
 
 ## How to use it
 
