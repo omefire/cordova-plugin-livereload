@@ -35,6 +35,7 @@
     "semver": "^4.3.x",
     "shelljs": "0.3.0",
     "npm": "^2.10.x",
-    "properties-parser": "0.2.3"
+    "properties-parser": "0.2.3",
+    "jsdom": "3.1.2"
   }
 }
