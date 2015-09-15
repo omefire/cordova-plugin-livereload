@@ -26,8 +26,6 @@
     "url": "https://github.com/omefire/cordova-plugin-livereload.git"
   },
   "dependencies": {
-    "ua-parser-js": "0.7.7", 
-    "proxy-middleware": "0.13.1", 
     "browser-sync": "2.7.13",
     "q": "1.0.1",
     "elementtree": "0.1.6",
