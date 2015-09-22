@@ -11,6 +11,10 @@ What it does :
 
     cordova plugin add https://github.com/omefire/cordova-plugin-livereload.git
 
+## Supported platforms
+* Android
+* iOS
+
 ## How to use it
 
 * Make sure your device/emulator and your computer are connected to the same wifi network
