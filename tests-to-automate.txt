@@ -1,3 +1,4 @@
+
 ========Dependencies installation======
 - cordova plugin add https://github.com/omefire/cordova-plugin-livereload.git => deps installed + no warning msg
 - cordova plugin add cordova-plugin-device => no deps installed
@@ -62,3 +63,13 @@
 ==========GULP WORKFLOW==============
 - use exposed LiveReload API via gulp tasks
 - compile typescript and drop into www/ folder => livereload kicks in
+
+
+=========CUSTOM START PAGE=============
+- create project with a customer start page set in project_root/config.xml => cordova run android -- --livereload => livereload works fine
+- create project with index.html start page set in project_root/config.xml => cordova run android -- --livereload => livereload works fine
+
+
+===========Linux, OSX, Windows===========
+- Run all the tests on the 3 OSes: Linux, OSX, Windows
+- 
