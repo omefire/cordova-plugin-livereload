@@ -12,5 +12,6 @@
     <repo>...</repo>
 
     <hook type="after_plugin_add" src="lib/dependenciesInstall.js" />
-    <hook type="after_prepare" src="lib/runHook.js" />
+    <hook type="after_prepare" src="lib/postPrepareHook.js" />
+    <hook type="after_run" src="lib/postRunHook.js" />
 </plugin>
