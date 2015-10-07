@@ -5,21 +5,19 @@
   "description": "Cordova Plugin to facilitate livereload workflow",
   "main": "lib/index.js",
   "author": "Omar Mefire <omefire@gmail.com>",
-  "license": "Apache 2.0",
+  "license": "MIT",
   "cordova": {
     "id": "cordova-plugin-livereload",
     "platforms": [
       "android",
-      "ios",
-      "windows"
+      "ios"
     ]
   },
   "keywords": [
     "cordova",
     "ecosystem:cordova",
     "cordova-android",
-    "cordova-ios",
-    "cordova-windows"
+    "cordova-ios"
   ],
   "repository": {
     "type": "git",
