@@ -34,3 +34,8 @@ What it does :
     ```cordova run android -- --livereload```
 
 * Make changes to your HTML, CSS or Javascript and watch those changes instantaneously be reflected on your device/emulator
+
+
+## LICENSE
+
+cordova-plugin-livereload is licensed under the MIT Open Source license.
