@@ -7,7 +7,7 @@
     version="1.0.0-dev">
     <name>cordova-plugin-livereload</name>
     <description>Cordova Plugin to integrate LiveReload in the workflow</description>
-    <license>Apache 2.0</license>
+    <license>MIT</license>
     <keywords>cordova,browsersync, browser-sync</keywords>
     <repo>...</repo>
 
