@@ -1,0 +1,64 @@
+========Dependencies installation======
+- cordova plugin add https://github.com/omefire/cordova-plugin-livereload.git => deps installed + no warning msg
+- cordova plugin add cordova-plugin-device => no deps installed
+- 
+
+======Basic LiveReload===========
+- cordova run android --livereload 
+- cordova run android -- --livereload 
+- cordova run ios -- --livereload
+- cordova run ios --livereload
+- cordova emulate android -- --livereload => .html, .css livereloaded
+- cordova run android --device => runs fine
+- cordova emulate android => runs fine
+- cordova run android -- --livereload => Display "CTRL+C" msg
+- cordova build android -- --livereload => Doesn't start LiveReload
+- cordova platform add android -- --livereload => works fine
+- phonegap run android -- --livereload => starts livereload and .html, .css works fine
+- taco run android -- --livereload => starts livereload and .html, .css works fine
+- gulp run -- --livereload => starts livereload and .html, .css works fine
+- add a new file to www/ folder => livereload kicks in
+- modify img file in www/ folder => livereload kicks in
+- modify merge file not in www/ folder => livereload kicks in
+- cordova build android -- --livereload => NO livereload kicks in
+- 
+
+======Unsupported platforms=========
+- cordova run browser -- --livereload
+- cordova run windows -- --livereload => displays msg saying it's unsupported
+- cordova emulate windows -- --livereload => displays msg saying it's unsupported
+- cordova run browser windows -- --livereload => displays that none of the platforms is supported and stops the process
+  	      	      	       & no "CTRL+C" msg is displayed
+- cordova run android browser -- --livereload => displays that browser is not supported, starts livereload on android platform 
+  	      	      	       & "CTRL+C" msg is displayed
+- 
+
+=======User ends LiveReload via "CTRL+C"=========
+
+
+=======Content Security Policy==========
+- app has CSP blocking network communication in its index.html => cordova run ios -- --livereload => livereload works fine
+
+
+=======Custom Index.html page=========
+- app with start page being 'customPage.html' => cordova run android -- --livereload => livereload works fine
+- 
+
+=======Computer Not connected to any network==========
+- cordova plugin add cordova-plugin-livereload => disconnect from networks => cordova run android -- --livereload => LiveReload server stopped 
+  	  	      & an error msg displayed: "No External URLs available. Make sure your computer is connected to a network."
+  	  	      & no "CTRL+C" msg displayed
+- 
+
+
+========Multi-Platform Scenarios================
+- cordova run android ios -- --livereload => modify index.html, index.css => mirror changes in all connected devices
+- cordova emulate android ios -- --livereload => modify index.html, index.css => mirror changes in all connected devices
+- cordova run --target=emulator-1 --target=device-1 => modify index.html, index.css => mirror changes in all connected devices
+- cordova run android ios -- --livereload => modify index.html, index.css => mirror CLICKS + SCROLLS + REFRESH + FORM ACTIONS changes in all connected devices
+- 
+
+
+==========GULP WORKFLOW==============
+- use exposed LiveReload API via gulp tasks
+- compile typescript and drop into www/ folder => livereload kicks in
