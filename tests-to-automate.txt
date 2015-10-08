@@ -2,6 +2,7 @@
 ========Dependencies installation======
 - cordova plugin add https://github.com/omefire/cordova-plugin-livereload.git => deps installed + no warning msg
 - cordova plugin add cordova-plugin-device => no deps installed
+- no message related to optional deps failing displayed on cmd line (Linux, Windows, OSX)
 - 
 
 ======Basic LiveReload===========
@@ -22,6 +23,8 @@
 - modify img file in www/ folder => livereload kicks in
 - modify merge file not in www/ folder => livereload kicks in
 - cordova build android -- --livereload => NO livereload kicks in
+- Add a new file to www/folder1/ folder => livereload kicks in
+- Remove a file from www/folder1 => livereload kicks in
 - 
 
 ======Unsupported platforms=========
