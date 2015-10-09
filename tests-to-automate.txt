@@ -71,8 +71,16 @@
 =========CUSTOM START PAGE=============
 - create project with a customer start page set in project_root/config.xml => cordova run android -- --livereload => livereload works fine
 - create project with index.html start page set in project_root/config.xml => cordova run android -- --livereload => livereload works fine
+-
 
+==========Config.xml could be anywhere in the platform folder===============
+- test iOS app named: HelloWorld
+- test iOS app named: StarterApp
+- test iOS app created with ionic template
+- all the above tests will have different folders that contain the config.xml. good area to look for bugs
+- 
 
 ===========Linux, OSX, Windows===========
 - Run all the tests on the 3 OSes: Linux, OSX, Windows
 - 
+
