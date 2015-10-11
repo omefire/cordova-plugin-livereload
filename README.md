@@ -7,10 +7,6 @@ What it does :
 
 * Synchronize scrolls, clicks and form inputs on multiple devices.
 
-## How to install it
-
-    cordova plugin add https://github.com/omefire/cordova-plugin-livereload.git
-
 ## Supported platforms
 * Android
 * iOS
@@ -34,6 +30,14 @@ What it does :
     ```cordova run android -- --livereload```
 
 * Make changes to your HTML, CSS or Javascript and watch those changes instantaneously be reflected on your device/emulator
+
+## Options
+
+* Ignoring files
+You can also specify files to ignore with the --ignore=path option:
+ (anymatch-compatible definition) Defines files/paths to be ignored. The whole relative or absolute path is tested, not just filename. If a function with two arguments is provided, it gets called twice per path - once with a single argument (the path), second time with two arguments (the path and the fs.Stats object of that path) :
+
+      ```cordova run android -- --livereload --ignore=--ignore=build/**/*.*```
 
 
 ## LICENSE
