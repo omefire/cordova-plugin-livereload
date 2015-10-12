@@ -3,7 +3,6 @@
   "id": "cordova-plugin-livereload",
   "version": "1.0.0",
   "description": "Cordova Plugin to facilitate livereload workflow",
-  "main": "lib/index.js",
   "author": "Omar Mefire <omefire@gmail.com>",
   "license": "MIT",
   "cordova": {
@@ -33,6 +32,7 @@
     "npm": "^2.10.x",
     "properties-parser": "0.2.3",
     "cheerio": "0.19.0",
-    "glob": "5.0.15"
+    "glob": "5.0.15",
+    "lodash.merge": "3.3.2"
   }
 }
