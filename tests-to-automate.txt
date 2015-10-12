@@ -80,6 +80,16 @@
 - all the above tests will have different folders that contain the config.xml. good area to look for bugs
 - 
 
+=========IGNORE OPTION===========
+- `cordova run android -- --livereload` on project with www/css/index.css as main css src for main page => edit www/css/index.css => livereload
+- `cordova run android -- --livereload --ignore=css` on project with www/css/index.css as main css src for main page => edit www/css/index.css => NO livereload
+-
+
+
+==========A Random error occurs==========
+- simulate a random error in random parts of the code => a clear error msg gets displayed to user stating: `cordova-plugin-livereload: An error occurred - bla bla bla`
+-
+
 ==========Custom options provided by user when using the API============
 - User passes open=true as an option => the browser gets opened by default on `cordova run android -- --livereload`
 - User passes custom file watcher => the custom file watcher gets called
