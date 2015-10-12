@@ -37,7 +37,7 @@ What it does :
 You can also specify files to ignore with the --ignore=path option:
  (anymatch-compatible definition) Defines files/paths to be ignored. The whole relative or absolute path is tested, not just filename. If a function with two arguments is provided, it gets called twice per path - once with a single argument (the path), second time with two arguments (the path and the fs.Stats object of that path) :
 
-      ```cordova run android -- --livereload --ignore=--ignore=build/**/*.*```
+      ```cordova run android -- --livereload --ignore=build/**/*.*```
 
 
 ## LICENSE
