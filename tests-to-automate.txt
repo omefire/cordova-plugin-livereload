@@ -25,7 +25,10 @@
 - cordova build android -- --livereload => NO livereload kicks in
 - Add a new file to www/folder1/ folder => livereload kicks in
 - Remove a file from www/folder1 => livereload kicks in
-- 
+- With logo file referenced from index.html => remove logo.png => livereload kicks in => rendered app with NO logo
+- With logo file referenced from index.html => add logo.png (it was previously non-existent in filesystem, only present in index.html source code)
+       	    	 => livereload kicks in => rendered app has logo on
+-
 
 ======Unsupported platforms=========
 - cordova run browser -- --livereload
@@ -83,6 +86,7 @@
 =========IGNORE OPTION===========
 - `cordova run android -- --livereload` on project with www/css/index.css as main css src for main page => edit www/css/index.css => livereload
 - `cordova run android -- --livereload --ignore=css` on project with www/css/index.css as main css src for main page => edit www/css/index.css => NO livereload
+- `cordova run android -- --livereload --ignore  =css` => edit www/css/index.css => livereload happens because of whitespace after ignore option
 -
 
 
