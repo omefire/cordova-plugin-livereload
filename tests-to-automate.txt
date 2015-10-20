@@ -106,7 +106,6 @@
 - cordova emulate android => works
 - cordova emulate android -- --livereload => works
 - cordova emulate android -- --livereload --ignore=/lib/** => work
-- cordova emulate android -- --livereload --ignore=  /lib/** => works
 - cordova emulate android -- --livereload --ignore= => works
 - cordova emulate android -- --livereload --ignore => works
 
