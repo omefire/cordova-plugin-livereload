@@ -102,3 +102,11 @@
 - Run all the tests on the 3 OSes: Linux, OSX, Windows
 - 
 
+===========Bug Fix for emulate option==========
+- cordova emulate android => works
+- cordova emulate android -- --livereload => works
+- cordova emulate android -- --livereload --ignore=/lib/** => work
+- cordova emulate android -- --livereload --ignore= => works
+- cordova emulate android -- --livereload --ignore => works
+
+
