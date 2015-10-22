@@ -1,5 +1,5 @@
 # cordova-plugin-livereload
-This plugin's goal is to integrate LiveReload into Cordova workflow. It is based on BrowserSync.
+This plugin's goal is to integrate livereload and gestures synchronization across devices into the Cordova development workflow. It is based on BrowserSync.
 
 What it does :
 
