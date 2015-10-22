@@ -36,9 +36,9 @@ What it does :
 * Ignoring files
 
 You can specify files to ignore with the --ignore=path option:
- This option accepts any anymatch-compatible definition. It defines files/paths to be ignored :
+ This option accepts any [anymatch-compatible definition](https://www.npmjs.com/package/anymatch). It defines files/paths to be ignored :
 
-    ```cordova run android -- --livereload --ignore=build/**/*.*```
+```cordova run android -- --livereload --ignore=build/**/*.*```
 
 
 ## LICENSE
