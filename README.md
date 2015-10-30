@@ -49,6 +49,13 @@ In case you're facing connection issues due to proxy/firewall, you can use the -
  This option allows you to easily access the livereload server on your local development machine without messing with DNS and firewall settings.
  It relies on [Localtunnel](http://localtunnel.me/), which will assign you a unique publicly accessible url that will proxy all requests to your locally running development server.
 
+* ghostMode (Syncing across devices)
+
+By default, gestures(clicks, scrolls & form inputs) on any device will be mirrored to all others.
+This option allows you to disable it if you want:
+
+```cordova run android ios -- --livereload --ghostMode=false```
+
 
 ## LICENSE
 
