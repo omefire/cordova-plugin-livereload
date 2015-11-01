@@ -6,7 +6,7 @@
     id="cordova-plugin-livereload"
     version="1.0.0-dev">
     <name>cordova-plugin-livereload</name>
-    <description>Cordova Plugin to integrate LiveReload in the workflow</description>
+    <description>Plugin to enable livereload and gestures synchronization across devices for Cordova</description>
     <license>MIT</license>
     <keywords>cordova,browsersync, browser-sync</keywords>
     <repo>...</repo>
