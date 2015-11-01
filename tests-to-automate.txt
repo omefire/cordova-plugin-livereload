@@ -110,3 +110,7 @@
 - cordova emulate android -- --livereload --ignore => works
 
 
+===================GhostMode option=============
+- cordova run android ios -- --livereload => ghostmode enabled and user can sync gestures across the 2 platforms
+- cordova run android ios -- --livereload --ghostmode=false => ghostmode disabled and user CANNOT sync gestures across the 2 platforms
+- cordova run android ios -- --livereload --ghostmode=true => ghostmode enabled and user can sync gestures across the 2 platforms
