@@ -18,7 +18,7 @@ What it does :
 
 * Install the plugin on your machine : 
 
-    ```cordova plugin add https://github.com/omefire/cordova-plugin-livereload.git```
+    ```cordova plugin add cordova-plugin-livereload```
 
 * Create your cordova project :
 
