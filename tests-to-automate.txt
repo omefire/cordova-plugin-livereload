@@ -114,3 +114,18 @@
 - cordova run android ios -- --livereload => ghostmode enabled and user can sync gestures across the 2 platforms
 - cordova run android ios -- --livereload --ghostmode=false => ghostmode disabled and user CANNOT sync gestures across the 2 platforms
 - cordova run android ios -- --livereload --ghostmode=true => ghostmode enabled and user can sync gestures across the 2 platforms
+
+
+=====================Exposing API Endpoints================
+- test that all the events fire at the correct moment : 'livereload:start', 'livereload:stop', 'livereload:error', etc...
+- test that the Patcher (.patch, removeCSP) can be consumed successfully from npm package clients
+- test that clients can successfully query the livereload status after consuming the npm package
+- test that clients can kick off the livereload process from the npm package
+- test the api endpoints
+- when using the api, specify whether you want to install the dependencies
+-
+
+
+- make sure that running `phonegap|ionic run android --livereload` doesn't start livereloading when the plugin is installed
+- make sure only running `phonegap|ionic run android -- --livereload` starts livereloading
+-
