@@ -8,8 +8,8 @@
     <name>cordova-plugin-livereload</name>
     <description>Plugin to enable livereload and gestures synchronization across devices for Cordova</description>
     <license>MIT</license>
-    <keywords>cordova,browsersync, browser-sync</keywords>
-    <repo>...</repo>
+    <keywords>cordova, livereload, live-reload, live reload, ios, android, browsersync, browser-sync, devicesync, device-sync</keywords>
+    <repo>https://github.com/omefire/cordova-plugin-livereload.git</repo>
 
     <hook type="after_plugin_add" src="lib/dependenciesInstall.js" />
     <hook type="after_prepare" src="lib/postPrepareHook.js" />
