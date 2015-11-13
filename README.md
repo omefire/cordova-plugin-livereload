@@ -13,6 +13,13 @@ What it does :
 
 ## How to use it
 
+It can be used in 2 ways:
+
+* As a cordova plugin
+* As an NPM package (you can include it in your custom workflows)
+
+## Using it as a plugin
+
 * Make sure your device/emulator and your computer are connected to the same wifi network
 
 
@@ -55,6 +62,50 @@ By default, gestures(clicks, scrolls & form inputs) on any device will be mirror
 This option allows you to disable it if you want:
 
 ```cordova run android ios -- --livereload --ghostMode=false```
+
+## Using it as an NPM package
+
+This codebase can also be used as an NPM package, making it easier to integrate in your custom workflows.
+Here's an example of how to use it:
+
+
+
+       var lr = require('cordova-plugin-livereload');
+       var cordova = require('cordova-lib');
+
+       //  Start LiveReload server
+       var projectRoot = '/home/omefire/Projects/mileage-tracker';
+       var platforms = ['android', 'ios'];
+
+       return lr.start(projectRoot, platforms, {
+           ghostMode: true,
+           ignore: 'build/**/*.*',
+           cb: function (event, file, lrHandle) {
+           
+               // After a file changes, first run `cordova prepare`, then reload.
+               cordova.raw.prepare().then(function () {
+                   var patcher = new lr.Patcher(projectRoot, platforms);
+                   return patcher.removeCSP();
+               }).then(function () {
+                   if (event === 'change') {
+                       return lrHandle.reloadFile(file);
+                   }
+
+                   // If new files got added or deleted, reload the whole app instead of specific files only
+                   // e.g: index.html references a logo file 'img/logo.png'
+                   // deleting the 'img/logo.png' file will trigger a reload that will remove it from the rendered app
+                   // likewise, adding the 'img/logo.png' file will trigger it to be shown on the app
+                   return lrHandle.reloadBrowsers();
+               }).fail(function (err) {
+                   var msg = ' - An error occurred: ' + err;
+                   logger.show(msg);
+                   lrHandle.stop();
+               });
+           }
+        });
+```
+
+
 
 
 ## LICENSE
