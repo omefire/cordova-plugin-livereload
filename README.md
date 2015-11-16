@@ -31,8 +31,11 @@ It can be used in 2 ways:
 
     ``` cordova create myProject ```
 
+* Navigate to your newly created project :
 
-* Run your app. This step launches the app on your device/emulator :
+    ``` cd myProject ```
+
+* Run your app with the ```--livereload flag```, Note the extra ```--```. This step launches the app on your device/emulator :
 
     ```cordova run android -- --livereload```
 
