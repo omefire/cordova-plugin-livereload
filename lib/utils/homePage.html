@@ -32,8 +32,7 @@
        		var req = new XMLHttpRequest();			
 			
 			// Use `Math.random()` to prevent the caching of the server_url by the browser
-       		req.open('GET', 'asdf.com'); // server_url + '?' + Math.random()
-			//req.open('GET', server_url + '?' + Math.random());
+			req.open('GET', server_url + '?' + Math.random());
 			
 			req.onreadystatechange = function(aEvt) {
 	 			if (req.readyState == 4) {
