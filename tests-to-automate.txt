@@ -129,3 +129,10 @@
 - make sure that running `phonegap|ionic run android --livereload` doesn't start livereloading when the plugin is installed
 - make sure only running `phonegap|ionic run android -- --livereload` starts livereloading
 -
+
+================Error page and connection issues handling============
+- disconnect the mobile device from the same WIFI the computer is on, then run `cordova run android -- --livereload` => the mobile app should display an error page
+        telling the user about the connection error and should offer suggestions on how to get past it
+- Now, reconnect to the same WIFI, and run the above command again => the cordova app should start successfully and the user should be able to use livereload
+     without any issues
+- 
