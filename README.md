@@ -91,7 +91,7 @@ Here's an example of how to use it:
                    return patcher.removeCSP();
                }).then(function () {
                    if (event === 'change') {
-                       return lrHandle.reloadFile(file);
+                       return lrHandle.tryReloadingFile(file);
                    }
 
                    // If new files got added or deleted, reload the whole app instead of specific files only
