@@ -136,3 +136,6 @@
 - Now, reconnect to the same WIFI, and run the above command again => the cordova app should start successfully and the user should be able to use livereload
      without any issues
 - 
+
+
+- If user tries to livereload a platform that hasn't been added => error out and warn him
