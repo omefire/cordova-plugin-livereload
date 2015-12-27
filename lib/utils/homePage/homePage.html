@@ -79,7 +79,6 @@
         // Note: These are the kinds of servers we are interested in. (e.g: we don't care about 'ui' and 'ui-external')
         var serverTypes = ['local', 'external', 'tunnel'];
         
-        // What if an exception is thrown here ?
         var areServersAccessiblePromises = serverTypes.map(function(serverType) {
             return isServerAccessible(SERVERS[serverType]);
         });
