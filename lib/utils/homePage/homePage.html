@@ -40,8 +40,7 @@
             var req = new XMLHttpRequest();			
         			
             // Use `Math.random()` to prevent the caching of the server_url by the browser
-            req.open('GET', url + '?' + Math.random());
-        			
+            req.open('GET', url + '?' + Math.random());        			
             req.onreadystatechange = function(aEvt) {
                 if (req.readyState == 4) {
                     if (req.status == 200) {
@@ -53,19 +52,17 @@
             req.send();
         }
         
+        /**
+         * Checks if a particular server can be connected from this page
+         */
         function isServerAccessible(server_url) {
             if(!server_url) {
                 return Q(false);
             }
-            
-            var deferred = Q.defer();
-            
-            // ToDO: timeout
-            // What if it takes a really long time to return ?
-            // What if the AJAX call fails ?
+                        
+            var deferred = Q.defer();            
             ajaxCall(
-                // Use `Math.random()` to prevent the caching of the server_url by the browser
-                server_url + '?' + Math.random(), 
+                server_url, 
                 function() {
                     deferred.resolve(true);
                 }, 
@@ -76,35 +73,32 @@
             return deferred.promise;
         }
         		
-        // Note: __SERVER_URLs__ gets replaced by real server urls right before this file gets deployed to a device/emulator
-        // ToDO: change to __SERVERS__
-        var SERVERS = JSON.parse('__SERVER_URLs__');
+        // Note: __SERVERS__ gets replaced by real server urls right before this file gets deployed to a device/emulator
+        var SERVERS = JSON.parse('__SERVERS__');
         
-        // What if user did not specify --tunnel ?
-        // Note: The kinds of servers we are interested in. (e.g: we don't care about 'ui' and 'ui-external')
-        // ToDO: what if both 'external' and 'tunnel' are accessible ?
+        // Note: These are the kinds of servers we are interested in. (e.g: we don't care about 'ui' and 'ui-external')
         var serverTypes = ['local', 'external', 'tunnel'];
         
         // What if an exception is thrown here ?
-        // What if NO server is accessible ?
         var areServersAccessiblePromises = serverTypes.map(function(serverType) {
             return isServerAccessible(SERVERS[serverType]);
         });
         
         Q.all(areServersAccessiblePromises).then(function(areServersAccessible) {
-            //alert(JSON.stringify(areServersAccessible));
             for(var i = 0; i < areServersAccessible.length; i++) {
                 if(areServersAccessible[i]) {
-                    //alert("REDIRECTING: " + SERVERS[serverTypes[i]]);
-                    window.location.href = SERVERS[serverTypes[i]];
+                    return SERVERS[serverTypes[i]];
                 }
             }
+            return false;
+        }).then(function(accessibleServer) {
+            if(!accessibleServer) {
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('error').style.display = 'block';
+            } else {
+                window.location.href = accessibleServer;
+            }            
         });
-        
-        // We were NOT able to connect to any server
-        // ToDO: What if no server urls can be connected to ?	
-        document.getElementById('loading').style.display = 'none';
-        document.getElementById('error').style.display = 'block'; 	
     </script>
 
 </html>
