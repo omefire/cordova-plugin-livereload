@@ -1,0 +1,110 @@
+<html>
+    
+    <head>
+        <title>CORDOVA-PLUGIN-LIVERELOAD</title>
+        <style>
+            #error {
+                display: none;
+            }
+        </style>
+        <script src="bower_components/q/q.js"></script>
+        <script src="bower_components/underscore/underscore-min.js"></script>
+    </head>
+    
+    <body>
+        <h3>CORDOVA-PLUGIN-LIVERELOAD</h3>
+        <div id="error">There was an error connecting to the BrowserSync server.
+            <br />
+            <br />Try using the<b><a>'tunnel'</a></b>option as in:
+            <br />
+            <b>`cordova run android -- --livereload --tunnel`</b>
+            <br />
+            <br />For more information,
+            <b>
+                <a href="https://github.com/omefire/cordova-plugin-livereload#options">check the documentation</a>
+            </b>
+            <br />
+            <br />
+        </div>
+        <div id="loading">...Loading your app, Please wait...</div>
+    </body>
+    <script type="text/javascript">
+        
+        /**
+         * Make an AJAX request:
+         *   - url: the url to make the AJAX request to
+         *   - success: the function to call in case the AJAX call succeeds
+         *   - fail: the function to call in case the AJAX call fails
+         */
+        function ajaxCall(url, success, fail) {
+            var req = new XMLHttpRequest();			
+        			
+            // Use `Math.random()` to prevent the caching of the server_url by the browser
+            req.open('GET', url + '?' + Math.random());
+        			
+            req.onreadystatechange = function(aEvt) {
+                if (req.readyState == 4) {
+                    if (req.status == 200) {
+                        return success();
+                    }
+                    return fail();
+                }
+            };
+            req.send();
+        }
+        
+        function isServerAccessible(server_url) {
+            if(!server_url) {
+                return Q(false);
+            }
+            
+            var deferred = Q.defer();
+            
+            // ToDO: timeout
+            // What if it takes a really long time to return ?
+            // What if the AJAX call fails ?
+            ajaxCall(
+                // Use `Math.random()` to prevent the caching of the server_url by the browser
+                server_url + '?' + Math.random(), 
+                function() {
+                    deferred.resolve(true);
+                }, 
+                function() {
+                    deferred.resolve(false);
+                }
+            );            
+            return deferred.promise;
+        }
+        		
+        // Note: __SERVER_URLs__ gets replaced by real server urls right before this file gets deployed to a device/emulator
+        // ToDO: change to __SERVERS__
+        var SERVERS = JSON.parse('__SERVER_URLs__');
+        
+        // What if user did not specify --tunnel ?
+        // Note: The kinds of servers we are interested in. (e.g: we don't care about 'ui' and 'ui-external')
+        // ToDO: what if both 'external' and 'tunnel' are accessible ?
+        var serverTypes = ['local', 'external', 'tunnel'];
+        
+        // What if an exception is thrown here ?
+        // What if NO server is accessible ?
+        var areServersAccessiblePromises = serverTypes.map(function(serverType) {
+            return isServerAccessible(SERVERS[serverType]);
+        });
+        
+        Q.all(areServersAccessiblePromises).then(function(areServersAccessible) {
+            //alert(JSON.stringify(areServersAccessible));
+            for(var i = 0; i < areServersAccessible.length; i++) {
+                if(areServersAccessible[i]) {
+                    //alert("REDIRECTING: " + SERVERS[serverTypes[i]]);
+                    window.location.href = SERVERS[serverTypes[i]];
+                }
+            }
+        });
+        
+        // We were NOT able to connect to any server
+        // ToDO: What if no server urls can be connected to ?	
+        document.getElementById('loading').style.display = 'none';
+        document.getElementById('error').style.display = 'block'; 	
+    </script>
+
+</html>
