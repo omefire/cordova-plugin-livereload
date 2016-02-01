@@ -1,7 +1,7 @@
 {
   "name": "cordova-plugin-livereload",
   "id": "cordova-plugin-livereload",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "main": "lib/index.js",
   "description": "Cordova Plugin to facilitate livereload workflow",
   "author": "Omar Mefire <omefire@gmail.com>",
@@ -16,10 +16,10 @@
   "keywords": [
     "cordova",
     "livereload",
-    "live-reload", 
-    "live reload", 
+    "live-reload",
+    "live reload",
     "devicesync",
-    "device-sync",   
+    "device-sync",
     "ecosystem:cordova",
     "cordova-android",
     "cordova-ios"
