@@ -1,10 +1,3 @@
-## Deprecation notice
-'cordova-plugin-livereload' has been deprecated!!!
-
-Please use 'taco run --livereload' instead.
-
-For more information please visit taco [website](http://taco.tools/docs/run.html).
-
 # cordova-plugin-livereload
 This plugin's goal is to integrate livereload and gestures synchronization across devices into the Cordova development workflow. It is based on BrowserSync.
 
