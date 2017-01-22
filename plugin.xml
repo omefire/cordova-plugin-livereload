@@ -11,7 +11,6 @@
     <keywords>cordova, livereload, live-reload, live reload, ios, android, browsersync, browser-sync, devicesync, device-sync</keywords>
     <repo>https://github.com/omefire/cordova-plugin-livereload.git</repo>
 
-    <hook type="before_plugin_install" src="deprecatePluginHook.js" />
     <hook type="after_plugin_add" src="lib/dependenciesInstall.js" />
     <hook type="after_prepare" src="lib/postPrepareHook.js" />
     <hook type="after_run" src="lib/postEmulateRunHook.js" />
